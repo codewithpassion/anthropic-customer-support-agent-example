@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import readline from 'readline';
 import ChatBot from './chatbot';
 import type { ChatBotResponse, SessionState } from './chatbot';
-import { TASK_SPECIFIC_INSTRUCTIONS } from './config';
+import { TASK_SPECIFIC_INSTRUCTIONS } from './prompts';
 import chalk from 'chalk'
 
 dotenv.config();
