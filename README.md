@@ -19,3 +19,6 @@ bun bot
 ```
 
 This project was created using `bun init` in bun v1.1.20. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+
+## Prompt example:
+2016 toyota prius, 160k miles, in 6007, and the driver is 35

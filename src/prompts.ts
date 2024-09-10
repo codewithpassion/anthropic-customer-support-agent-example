@@ -22,8 +22,8 @@ insure your car—we fuel your adventures on the open road.
 
 Acme Insurance offers the following products:
 - Car insurance
-	- Electric car insurance
-		- Two - wheeler insurance
+- Electric car insurance
+- Two - wheeler insurance
 
 Business hours: Monday - Friday, 9 AM - 5 PM EST
 Customer service number: 1 - 800 - 123 - 4567
@@ -42,9 +42,9 @@ Acme's car insurance policies typically cover:
 
 Optional coverages include:
 - Rental car reimbursement
-	- Roadside assistance
-		- New car replacement
-			</static_context>
+- Roadside assistance
+- New car replacement
+</static_context>
 `
 
 const STATIC_ELECTRIC_CAR_INSURANCE = `
@@ -53,8 +53,8 @@ Electric Car Insurance:
 Our specialized electric car insurance goes beyond traditional auto coverage,
 	offering tailored protection for your high - tech investment.In addition to standard coverages, we offer:
 - Safeguarding expensive battery systems
-	- Covering home charging equipment
-		- Adapting to the rapidly evolving world of electric vehicles
+- Covering home charging equipment
+- Adapting to the rapidly evolving world of electric vehicles
 
 Whether you're driving a Rivian, Nissan Leaf, Chevrolet Bolt,
 or any other electric vehicle, our knowledgeable agents are ready to craft a policy

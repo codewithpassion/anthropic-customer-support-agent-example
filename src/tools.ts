@@ -18,4 +18,8 @@ const TOOLS: Tool[] = [
 	}
 ];
 
-export { TOOLS };
+function get_quote(args: { make: string, model: string, year: number, milage: number, driver_age: number }): number {
+	return args.driver_age * 10;
+}
+
+export { TOOLS, get_quote };

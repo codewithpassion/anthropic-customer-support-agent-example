@@ -2,15 +2,11 @@ import { Anthropic } from '@anthropic-ai/sdk';
 import type { MessageParam, TextBlock, ToolResultBlockParam, ToolUseBlock, ToolUseBlockParam } from '@anthropic-ai/sdk/resources/index.mjs';
 import dotenv from 'dotenv';
 import { IDENTITY } from './prompts';
-import { TOOLS } from './tools';
+import { TOOLS, get_quote } from './tools';
 
 dotenv.config();
 
 const MODEL = 'claude-3-sonnet-20240229';
-
-function get_quote(args: { make: string, model: string, year: number, milage: number, driver_age: number }): number {
-	return args.driver_age * 10;
-}
 
 export interface SessionState {
 	messages: MessageParam[];

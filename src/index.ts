@@ -12,6 +12,40 @@ const rl = readline.createInterface({
 	output: process.stdout
 });
 
+
+async function runChatbot() {
+	const sessionState: SessionState = {
+		messages: [
+			{ 'role': "user", "content": TASK_SPECIFIC_INSTRUCTIONS },
+			{ 'role': "assistant", "content": "Understood" },
+		],
+	};
+
+	const chatbot = new ChatBot(sessionState)
+
+	await processBotResponse(chatbot.processUserInput('Hello!'));
+
+	while (true) {
+		const userInput = await askQuestion('You: ');
+        if (userInput === 'exit' || userInput === 'quit') {
+            break;
+        }
+		await processBotResponse(chatbot.processUserInput(userInput));
+	}
+
+	rl.close();
+}
+
+async function main() {
+	try {
+		await runChatbot();
+		console.log('Chat completed.');
+	} catch (error) {
+		console.error('Error running Chat:', error);
+	}
+}
+
+
 async function askQuestion(question: string): Promise<string> {
 	return new Promise((resolve) => {
 		rl.question(question, (answer) => {
@@ -34,39 +68,5 @@ async function processBotResponse(response: AsyncIterable<ChatBotResponse>) {
 	}
 }
 
-
-
-async function runChatbot() {
-	const sessionState: SessionState = {
-		messages: [
-			{ 'role': "user", "content": TASK_SPECIFIC_INSTRUCTIONS },
-			{ 'role': "assistant", "content": "Understood" },
-		],
-	};
-
-	const chatbot = new ChatBot(sessionState)
-	// 2016 toyota prius, 160k miles, in 36608, and the driver is 42
-
-	await processBotResponse(chatbot.processUserInput('Hello!'));
-
-	while (true) {
-		const userInput = await askQuestion('You: ');
-        if (userInput === 'exit' || userInput === 'quit') {
-            break;
-        }
-		await processBotResponse(chatbot.processUserInput(userInput));
-	}
-
-	rl.close();
-}
-
-async function main() {
-	try {
-		await runChatbot();
-		console.log('Survey completed.');
-	} catch (error) {
-		console.error('Error running survey:', error);
-	}
-}
 
 main();
